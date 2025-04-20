@@ -59,16 +59,16 @@ def query_by_name(name):
     with connect() as conn:
         with conn.cursor() as cur:
             cur.execute("SELECT * FROM phonebook WHERE name = %s", (name,))
-            print(cur.fetchall())
+            print(cur.fetchall()) # сұраныстың бәрін тізім (list) түрінде қайтарады.
 
-# === DELETE ===
+# DELETE 
 def delete_user(name):
     with connect() as conn:
         with conn.cursor() as cur:
             cur.execute("DELETE FROM phonebook WHERE name = %s", (name,))
     print("Deleted!")
 
-# === MAIN MENU ===
+# MAIN MENU  
 def menu():
     while True:
         print("\n1. Insert (console)")
